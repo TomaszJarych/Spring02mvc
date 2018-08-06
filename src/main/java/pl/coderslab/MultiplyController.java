@@ -3,15 +3,57 @@ package pl.coderslab;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MultiplyController {
 	
 	@GetMapping("/multiply")
-	public String multiply(@RequestParam("size") int size, Model model) {
-		model.addAttribute("size", size);
-		return "task4";
+	@ResponseBody
+	public String multiply(@RequestParam("size") int size) {
+		String output ="";
+		output +="<html><body><table border=\"=1\">";
+		output +="<tr>";
+		for (int i = 1; i <= size; i++) {
+			output += "<td>"+i+"</td>";
+		}
+		output +="</tr>";
+		
+		for (int i = 1; i <= size; i++) {
+			output+= "<tr>";
+			for (int j = 1; j <= size; j++) {
+				output += "<td>"+i*j+"</td>";
+			}
+			output += "</tr>";
+		}
+		output += "</table></body></html>";
+		
+		return output;
+	}
+	@GetMapping("/paramMultiply/{rows}/{col}")
+	@ResponseBody
+	public String multiply(@PathVariable int rows, 
+						@PathVariable int col) {
+		String output ="";
+		output +="<html><body><table border=\"=1\">";
+		output +="<tr>";
+		for (int i = 1; i <= col; i++) {
+			output += "<td>"+i+"</td>";
+		}
+		output +="</tr>";
+		
+		for (int i = 1; i <= rows; i++) {
+			output+= "<tr>";
+			for (int j = 1; j <= col; j++) {
+				output += "<td>"+i*j+"</td>";
+			}
+			output += "</tr>";
+		}
+		output += "</table></body></html>";
+		
+		return output;
 	}
 
 }

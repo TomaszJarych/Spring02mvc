@@ -19,15 +19,15 @@ public class CookieController {
 	public String setCookie(@PathVariable("c1") String c1, @PathVariable("c2") String c2,
 			HttpServletResponse response) {
 		Cookie cookie = new Cookie("c1", c1);
-		cookie.setPath("/");
+		cookie.setPath("/Spring02mvc/");
 		Cookie cookie2 = new Cookie("c2", c2);
-		cookie2.setPath("/");
+		cookie2.setPath("/Spring02mvc/");
 		response.addCookie(cookie);
 		response.addCookie(cookie2);
 		return "Cookies has been added";
 	}
 
-	@RequestMapping("/getcookie")
+	@RequestMapping("/getcookies")
 	@ResponseBody
 	public String showCookies(@CookieValue("c1") String c1,
 			HttpServletRequest request) {

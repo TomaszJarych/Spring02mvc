@@ -1,14 +1,27 @@
 package pl.coderslab.classes;
 
-import java.math.BigDecimal;
 
 public class Product {
 	private final String name;
 	private final double price;
+	private final long id;
 
-	public Product(String name, double price) {
+	public Product(String name, double price, long id) {
+		this.id = id;
 		this.name = name;
 		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public long getId() {
+		return id;
 	}
 
 }

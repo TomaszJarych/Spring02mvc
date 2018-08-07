@@ -17,6 +17,11 @@ public class Cart {
 	public void addToCart(CartItem cartItem) {
 		cartItems.add(cartItem);
 	}
+
+
+	public List<CartItem> getCartItems() {
+		return cartItems;
+	}
 	
 	
 }

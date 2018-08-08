@@ -11,7 +11,7 @@ public class ProductDao {
 		 productList.add(new Product("Laptop", 1000, 1));
 		 productList.add(new Product("Powerbank", 200, 2));
 		 productList.add(new Product("Powerbank", 200, 3));
-		 productList.add(new Product("Taablet", 899, 4));
+		 productList.add(new Product("Tablet", 899, 4));
 		
 		return productList;
 	}	

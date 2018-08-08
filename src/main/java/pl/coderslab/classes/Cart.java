@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 @Component
 @Scope(value = AnnotationConfigWebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Cart {
-	private final List<CartItem> cartItems = new ArrayList<>();
+	private  List<CartItem> cartItems = new ArrayList<>();
 	
 	
 	public void addToCart(CartItem cartItem) {
